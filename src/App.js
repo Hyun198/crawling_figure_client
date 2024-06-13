@@ -99,8 +99,6 @@ function App() {
         <ul className='nav-list'>
           <li ><a href="/" aria-current="page">Home</a></li>
           <li ><a href="https://poisonapple.co.kr">포이즌애플</a></li>
-          <li ><a href="http://www.figuremall.co.kr/" >피규어몰</a></li>
-          <li ><a href="http://www.figurecity.co.kr/index.html" >피규어시티</a></li>
           <li ><a href="https://www.glorymonday.com/" >글로리먼데이</a></li>
         </ul>
         <form onSubmit={handleSearch}>
@@ -116,8 +114,6 @@ function App() {
       <div className="filter-func">
         <button onClick={() => setSelectedSite('All')}>전체</button>
         <button onClick={() => setSelectedSite('Poison')}>포이즌애플</button>
-        <button onClick={() => setSelectedSite('Figuremall')}>피규어몰</button>
-        <button onClick={() => setSelectedSite('FigureCity')}>피규어시티</button>
         <button onClick={() => setSelectedSite('Glorymonday')}>글로리먼데이</button>
       </div>
 
