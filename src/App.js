@@ -25,13 +25,13 @@ function App() {
     setSearched(true);
     try {
       const response = await axios.get(`/search?keyword=${encodeURIComponent(searchInput)}`)
-      const responsePostData = await axios.post(`/search`, { keyword: searchInput })
+      /* const responsePostData = await axios.post(`/search`, { keyword: searchInput }) */
       const { data1, data2 } = response.data
       console.log(response.data);
       setPoisonSearchResults(data1);
       setGlorymondaySearchResults(data2);
-      setFiguremallSearchResults(responsePostData.data.postdata1);
-      setFigureCitySearchResults(responsePostData.data.postdata2);
+      /*   setFiguremallSearchResults(responsePostData.data.postdata1);
+        setFigureCitySearchResults(responsePostData.data.postdata2); */
 
     } catch (error) {
       console.error('Error search results', error);
@@ -45,9 +45,9 @@ function App() {
   const resetResults = () => {
     setSelectedSite('All');
     setPoisonSearchResults([]);
-    setFiguremallSearchResults([]);
+    /*  setFiguremallSearchResults([]); */
     setGlorymondaySearchResults([]);
-    setFigureCitySearchResults([]);
+    /*   setFigureCitySearchResults([]); */
   }
 
   const renderProducts = (results) => {
@@ -72,18 +72,18 @@ function App() {
     switch (selectedSite) {
       case 'Poison':
         return renderProducts(PoisonSearchResults);
-      case 'Figuremall':
-        return renderProducts(FiguremallSearchResults);
-      case 'FigureCity':
-        return renderProducts(FigureCitySearchResults);
+      /*  case 'Figuremall':
+         return renderProducts(FiguremallSearchResults);
+       case 'FigureCity':
+         return renderProducts(FigureCitySearchResults); */
       case 'Glorymonday':
         return renderProducts(GlorymondaySearchResults);
       default:
         return (
           <>
             {renderProducts(PoisonSearchResults)}
-            {renderProducts(FiguremallSearchResults)}
-            {renderProducts(FigureCitySearchResults)}
+            {/* {renderProducts(FiguremallSearchResults)}
+            {renderProducts(FigureCitySearchResults)} */}
             {renderProducts(GlorymondaySearchResults)}
           </>
         );
