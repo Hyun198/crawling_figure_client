@@ -27,6 +27,7 @@ function App() {
       const response = await axios.get(`/search?keyword=${encodeURIComponent(searchInput)}`)
       const responsePostData = await axios.post(`/search`, { keyword: searchInput })
       const { data1, data2 } = response.data
+      console.log(response.data);
       setPoisonSearchResults(data1);
       setGlorymondaySearchResults(data2);
       setFiguremallSearchResults(responsePostData.data.postdata1);
